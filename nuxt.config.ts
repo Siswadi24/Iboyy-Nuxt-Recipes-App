@@ -22,7 +22,7 @@ export default defineNuxtConfig({
 
   // Base URL for GitHub Pages
   app: {
-    baseURL: 'https://github.com/Siswadi24/Iboyy-Nuxt-Recipes-App/', // Ganti 'repo-name' dengan nama repository GitHub Anda OKEEE
+    baseURL: '/Iboyy-Nuxt-Recipes-App/', // Ganti 'repo-name' dengan nama repository GitHub Anda OKEEE
   },
 
   // Image configuration
