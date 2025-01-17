@@ -56,9 +56,9 @@ export default defineNuxtConfig({
   },
 
   // Nitro configuration for prerendering (optional)
-  nitro: {
-    prerender: {
-      routes: ['/'], // Prerender halaman utama
-    },
+ nitro: {
+  prerender: {
+    failOnError: false, // Skip errors during prerendering
   },
+},
 });
