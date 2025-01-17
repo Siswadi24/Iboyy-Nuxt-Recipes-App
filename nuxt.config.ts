@@ -20,6 +20,10 @@ export default defineNuxtConfig({
     }
   },
 
+  app: {
+    baseURL: '/Iboyy-Nuxt-Recipes-App/', // Ganti 'repo-name' dengan nama repository GitHub Anda
+  },
+
   image: {
     domains: ['https://cdn.dummyjson.com'],
   },
