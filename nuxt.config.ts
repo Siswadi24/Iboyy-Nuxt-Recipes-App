@@ -64,20 +64,28 @@ export default defineNuxtConfig({
   },
 
   security: {
-    headers: {
-      contentSecurityPolicy: {
-        'child-src': ["'self'", 'https://cdn.dummyjson.com/**', 'https://siswadi24.github.io/**'],
-        'connect-src': ["'self'", 'https://dummyjson.com/**', 'https://siswadi24.github.io/**'],
-        'default-src': ["'self'", 'https://siswadi24.github.io/**'],
-        'font-src': ["'self'"],
-        'img-src': ["'self'", 'https://cdn.dummyjson.com/**', 'https://siswadi24.github.io/**'],
-        'script-src': ["'self'"],
-        'style-src': ["'self'", "'unsafe-inline'", 'https://cdn.dummyjson.com/**', 'https://siswadi24.github.io/**'],
-        'frame-src': ["'self'"],
-        'media-src': ["'self'"],
-        'manifest-src': ["'self'"]
-
-      }
-    }
+  headers: {
+    contentSecurityPolicy: {
+      'default-src': ["'self'"],
+      'script-src': ["'self'", "'nonce-{{nonce}}'"],
+      'style-src': ["'self'", "'nonce-{{nonce}}'", 'https://fonts.googleapis.com'],
+      'font-src': ["'self'", 'https://fonts.gstatic.com'],
+      'img-src': ["'self'", 'data:', 'https://cdn.dummyjson.com'],
+      'connect-src': ["'self'", 'https://dummyjson.com'],
+      'frame-src': ["'none'"],
+      'object-src': ["'none'"],
+      'base-uri': ["'self'"],
+      'form-action': ["'self'"],
+      'frame-ancestors': ["'none'"],
+      'manifest-src': ["'self'"],
+      'media-src': ["'self'"]
+    },
+    xContentTypeOptions: 'nosniff',
+    xDownloadOptions: 'noopen',
+    xFrameOptions: 'DENY',
+    xPermittedCrossDomainPolicies: 'none',
+    xXSSProtection: '0' // Modern browsers ignore this
   }
+}
+
 });
