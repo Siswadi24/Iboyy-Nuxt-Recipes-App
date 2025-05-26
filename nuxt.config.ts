@@ -67,8 +67,8 @@ export default defineNuxtConfig({
     headers: {
       contentSecurityPolicy: {
         'default-src': ["'self'"],
-        'script-src': ["https:", "'strict-dynamic'", "'nonce-{{nonce}}'"],
-        'style-src': ["'nonce-{{nonce}}'", 'https://fonts.googleapis.com'],
+        'script-src': ["'self'", "https:", "'unsafe-inline'", "'strict-dynamic'"],
+        'style-src': ["'self'", "https:", "'unsafe-inline'"],
         'font-src': ["'self'", 'https://fonts.gstatic.com', 'https://iconify.design', 'https://image.nuxt.com'],
         'img-src': ["'self'", 'data:', 'https://cdn.dummyjson.com'],
         'connect-src': ["'self'", 'https://dummyjson.com'],
