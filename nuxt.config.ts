@@ -64,12 +64,13 @@ export default defineNuxtConfig({
   },
 
   security: {
+    nonce: true,
     headers: {
       contentSecurityPolicy: {
         'default-src': ["'self'"],
-        'script-src': ["'self'", "https:", "'unsafe-inline'", "'strict-dynamic'"],
-        'style-src': ["'self'", "https:", "'unsafe-inline'"],
-        'font-src': ["'self'", 'https://fonts.gstatic.com', 'https://iconify.design', 'https://image.nuxt.com'],
+        'script-src': ["'self'", "https:", "'strict-dynamic'"],
+        'style-src': ["'self'", "https:"],
+        'font-src': ["'self'", "https:", 'https://fonts.gstatic.com', 'https://iconify.design', 'https://image.nuxt.com'],
         'img-src': ["'self'", 'data:', 'https://cdn.dummyjson.com'],
         'connect-src': ["'self'", 'https://dummyjson.com'],
         'frame-src': ["'none'"],
@@ -80,12 +81,22 @@ export default defineNuxtConfig({
         'manifest-src': ["'self'"],
         'media-src': ["'self'"]
       },
+      crossOriginEmbedderPolicy: 'unsafe-none',
+      crossOriginOpenerPolicy: 'same-origin',
+      crossOriginResourcePolicy: 'same-origin',
       xContentTypeOptions: 'nosniff',
       xDownloadOptions: 'noopen',
       xFrameOptions: 'DENY',
       xPermittedCrossDomainPolicies: 'none',
-      xXSSProtection: '0' // Modern browsers ignore this
+      xXSSProtection: '1'
     }
   }
+
+  // security: {
+  //   nonce: true,
+  //   headers: {
+  //     contentSecurityPolicy:false,
+  //     },
+  //   }
 
 });
