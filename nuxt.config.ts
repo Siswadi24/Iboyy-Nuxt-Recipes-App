@@ -83,7 +83,7 @@ export default defineNuxtConfig({
       },
       crossOriginEmbedderPolicy: 'unsafe-none',
       crossOriginOpenerPolicy: 'same-origin',
-      crossOriginResourcePolicy: 'same-origin',
+      // crossOriginResourcePolicy: 'same-origin',
       xContentTypeOptions: 'nosniff',
       xDownloadOptions: 'noopen',
       xFrameOptions: 'DENY',
