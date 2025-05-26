@@ -76,6 +76,7 @@ export default defineNuxtConfig({
         'frame-src': ['self'],
         'media-src': ['self'],
         'manifest-src': ['self']
+        
       }
     }
   }
