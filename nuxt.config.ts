@@ -75,7 +75,7 @@ export default defineNuxtConfig({
       contentSecurityPolicy: {
         'default-src': ["'self'"],
         'script-src': ["'self'", "https:", "'strict-dynamic'"],
-        'style-src': ["'self'", "https:"],
+        'style-src': ["'self'", "'nonce-{{nonce}}'", "https:"],
         'font-src': ["'self'", "https:", 'https://fonts.gstatic.com', 'https://iconify.design', 'https://image.nuxt.com'],
         'img-src': ["'self'", 'data:', 'https://cdn.dummyjson.com'],
         'connect-src': ["'self'", 'https://dummyjson.com'],
@@ -87,7 +87,7 @@ export default defineNuxtConfig({
         'manifest-src': ["'self'"],
         'media-src': ["'self'"]
       },
-      crossOriginEmbedderPolicy: 'unsafe-none',
+      crossOriginEmbedderPolicy: 'require-corp',
       crossOriginOpenerPolicy: 'same-origin',
       crossOriginResourcePolicy: 'same-origin',
       xContentTypeOptions: 'nosniff',
