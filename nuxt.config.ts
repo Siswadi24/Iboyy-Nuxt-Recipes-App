@@ -42,10 +42,11 @@ export default defineNuxtConfig({
 
   // Modules
   modules: [
-    '@nuxtjs/tailwindcss', // Tailwind CSS
-    '@nuxtjs/google-fonts', // Google Fonts
-    '@nuxt/icon', // Nuxt Icons
-    '@nuxt/image', // Nuxt Image module
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
+    '@nuxt/icon',
+    '@nuxt/image',
+    'nuxt-security'
   ],
 
   // Google Fonts configuration
@@ -56,9 +57,26 @@ export default defineNuxtConfig({
   },
 
   // Nitro configuration for prerendering (optional)
- nitro: {
-  prerender: {
-    failOnError: false, // Skip errors during prerendering
+  nitro: {
+    prerender: {
+      failOnError: false, // Skip errors during prerendering
+    },
   },
-},
+
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        'child-src': ['self', 'https://cdn.dummyjson.com'],
+        'connect-src': ['self', 'https://dummyjson.com'],
+        'default-src': ['self'],
+        'font-src': ['self'],
+        'img-src': ['self', 'https://cdn.dummyjson.com'],
+        'script-src': ['self'],
+        'style-src': ['self', 'https://cdn.dummyjson.com'],
+        'frame-src': ['self'],
+        'media-src': ['self'],
+        'manifest-src': ['self']
+      }
+    }
+  }
 });
