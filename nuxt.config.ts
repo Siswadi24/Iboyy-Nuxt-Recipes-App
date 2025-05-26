@@ -64,7 +64,13 @@ export default defineNuxtConfig({
   },
 
   security: {
+    strict: false,
     nonce: true,
+    ssg: {
+      meta: true,
+      hashScripts: true,
+      hashStyles: false 
+    },
     headers: {
       contentSecurityPolicy: {
         'default-src': ["'self'"],
@@ -83,13 +89,14 @@ export default defineNuxtConfig({
       },
       crossOriginEmbedderPolicy: 'unsafe-none',
       crossOriginOpenerPolicy: 'same-origin',
-      // crossOriginResourcePolicy: 'same-origin',
+      crossOriginResourcePolicy: 'same-origin',
       xContentTypeOptions: 'nosniff',
       xDownloadOptions: 'noopen',
       xFrameOptions: 'DENY',
       xPermittedCrossDomainPolicies: 'none',
       xXSSProtection: '1'
-    }
+    },
+    sri: true
   }
 
   // security: {
